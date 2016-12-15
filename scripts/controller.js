@@ -1,24 +1,5 @@
-var main = function(){
-	$(“h1”).click(function(){
-		$(this).hide();
-	});
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$(document).ready(main);
+$(document).ready(function(){
+    $(“h1”).click(function(){
+        $(“h1”).hide();
+    });
+});
