@@ -3,17 +3,19 @@ var main = function(){
 }
 
 var buildGuitarLayout = function(){
+	var fretLength = 100;
 	for(i = 0; i < 1; i++)
 	{
-		var fretLength = 100;
+		var rowOfFrets = $('<div class="fret">');
+		rowOfFrets.appendTo($('.guitar-display'));
 		for(j = 0; j < 6; j++)
 		{
-			var fret = $('<div class="fret">');
-			fret.width(40);
-			var fretString = fretLength + "px";
-			fret.height(fretLength);
-			fret.appendTo($('.guitar-display'));
+			var note = $('<div class="note">');
+			note.width(40);
+			note.height(fretLength);
+			note.appendTo(rowOfFrets);
 		}
+		fretLength = fretLength * .9;
 	}
 };
 

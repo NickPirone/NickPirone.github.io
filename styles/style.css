@@ -27,7 +27,12 @@ body {
 	
 }
 
-.fret {
+.fret{
+	background-color: brown;
+	width: 240px;
+}
+
+.note {
 	display: inline-block;
 	background-color: brown;
 	border-style: inset;
