@@ -1,6 +1,6 @@
 var tonals = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B"];
 var buildingMap = [4, 9, 2, 7, 11, 4];
-var selectedNotes = new Set();
+var tonalHits = [0,0,0,0,0,0,0,0,0,0,0,0];
 
 
 var main = function(){
@@ -11,12 +11,20 @@ var main = function(){
 var noteClicked = function(){
 	$(this).toggleClass('selected-note');
 	var classes = $(this).attr('class');
-	console.log(classes);
 	for(var indexTone in tonals)
 	{
 		if(classes.includes(tonals[indexTone]))
 		{
 			console.log(tonals[indexTone]);
+			if(classes.includes("selected-note"))
+			{
+				tonalHits[indexTone]++;
+			}
+			else
+			{
+				tonalHits[indexTone]--;
+			}
+			console.log(tonalHits[indexTone]);
 		}
 		
 	}
@@ -47,6 +55,10 @@ var buildGuitarLayout = function(){
 		{
 			var tone = tonals[buildingMap[j]]; 	
 			var note = $('<div class="note">');
+			if(i == 0)
+			{
+				note.addClass('first-line-note');
+			}
 			note.addClass(tone);
 			note.width(40);	
 			note.height(fretLength);

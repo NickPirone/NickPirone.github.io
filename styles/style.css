@@ -32,6 +32,10 @@
 	border-color: black;
 }
 
+.first-line-note {
+	background-color: Gray;
+}
+
 .selected-note {
 	background-color: SandyBrown;
 }
