@@ -20,5 +20,8 @@ body {
 }
 
 .fret {
+	display: inline-block;
 	background-color: brown;
+	border-style: inset;
+	border-color: black;
 }
