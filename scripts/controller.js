@@ -10,6 +10,16 @@ var main = function(){
 
 var noteClicked = function(){
 	$(this).toggleClass('selected-note');
+	var classes = $(this).attr('class');
+	console.log(classes);
+	for(var indexTone in tonals)
+	{
+		if(classes.includes(tonals[indexTone]))
+		{
+			console.log(tonals[indexTone]);
+		}
+		
+	}
 };
 
 var incrementBuildingMap = function(){
@@ -35,9 +45,9 @@ var buildGuitarLayout = function(){
 		rowOfFrets.appendTo($('.guitar-display'));
 		for(j = 0; j < 6; j++)
 		{
-			var tone = tonals[buildingMap[j]]; 
-			console.log(tone);
+			var tone = tonals[buildingMap[j]]; 	
 			var note = $('<div class="note">');
+			note.addClass(tone);
 			note.width(40);	
 			note.height(fretLength);
 			note.appendTo(rowOfFrets);
