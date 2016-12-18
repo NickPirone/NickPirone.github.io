@@ -1,7 +1,4 @@
 
-body {
-	background-color: blue;
-}
 
 .instrument-display {
 	width: 100%;
@@ -30,7 +27,11 @@ body {
 
 .note {
 	display: inline-block;
-	background-color: brown;
+	background-color: SaddleBrown;
 	border-style: inset;
 	border-color: black;
+}
+
+.selected-note {
+	background-color: SandyBrown;
 }
