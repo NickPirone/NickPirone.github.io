@@ -3,6 +3,14 @@ body {
 	background-color: blue;
 }
 
+.instrument-display {
+	width: 100%;
+}
+
+.guitar-display {
+	margin: auto;
+	width: 240px;
+}
 
 .main-title {
 	text-align:center;
