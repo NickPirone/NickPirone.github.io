@@ -1,4 +1,10 @@
-
+.key-table-item {
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
 
 .instrument-display {
 	width: 100%;
