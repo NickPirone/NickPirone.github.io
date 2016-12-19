@@ -1,12 +1,46 @@
 var tonals = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B"];
 var buildingMap = [4, 9, 2, 7, 11, 4];
 var tonalHits = [0,0,0,0,0,0,0,0,0,0,0,0];
-
+var majorKeyWalkthroughPattern = [1,3,6,8,10];
+var possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 
 var main = function(){
 	buildGuitarLayout();
 	$('.note').click(noteClicked);
 }
+
+var removeKeysFromPossibilities = function(){
+	for(var index in tonalHits)
+	{
+		if(tonalHits[index] != 0) //we have our first hit!
+		{
+			for(var walkThru in majorKeyWalkthroughPattern)
+			{
+				var steps = majorKeyWalkthroughPattern[walkThru];
+				if(index + steps > 11)
+				{
+					if(tonalHits[index+steps-12] > 0)
+					{
+						possibleKeys[index] = 0;
+						break;
+					}
+				}
+				else
+				{
+					if(tonalHits[index+steps] > 0)
+					{
+						possibleKeys[index] = 0;
+						break;
+					}
+				}
+			}			
+		}
+		else
+		{
+			possibleKeys[index] = 0;
+		}
+	}
+};
 
 var noteClicked = function(){
 	$(this).toggleClass('selected-note');
