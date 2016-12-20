@@ -9,7 +9,22 @@ var main = function(){
 	$('.note').click(noteClicked);
 }
 
+var updateTable = function(){
+	console.log(possibleKeys);
+	$('.key-table-item').each(function(keyIndex){
+		if(possibleKeys[keyIndex] == 0)
+		{
+			$(this).addClass('not-viable-key');
+		}
+		else
+		{
+			$(this).removeClass('not-viable-key');
+		}
+	});
+};
+
 var removeKeysFromPossibilities = function(){
+	possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 	for(var index in tonalHits)
 	{
 		if(tonalHits[index] != 0) //we have our first hit!
@@ -62,6 +77,8 @@ var noteClicked = function(){
 		}
 		
 	}
+	removeKeysFromPossibilities();
+	updateTable();
 };
 
 var incrementBuildingMap = function(){

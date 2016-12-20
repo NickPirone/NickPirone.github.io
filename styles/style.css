@@ -6,6 +6,10 @@
 	padding: 0;
 }
 
+.not-viable-key {
+	color: white;
+}
+
 .instrument-display {
 	width: 100%;
 }
