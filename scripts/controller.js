@@ -60,7 +60,7 @@ var noteClicked = function(){
 	var classes = $(this).attr('class');
 	for(var indexTone in tonals)
 	{
-		if(classes.includes(tonals[indexTone]))
+		if($(this).hasClass(tonals[indexTone]))
 		{
 			if(classes.includes("selected-note"))
 			{
