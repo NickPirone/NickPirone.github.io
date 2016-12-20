@@ -10,7 +10,6 @@ var main = function(){
 }
 
 var updateTable = function(){
-	console.log(possibleKeys);
 	$('.key-table-item').each(function(keyIndex){
 		if(possibleKeys[keyIndex] == 0)
 		{
@@ -24,36 +23,35 @@ var updateTable = function(){
 };
 
 var removeKeysFromPossibilities = function(){
+	console.log(tonalHits);
 	possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
-	for(var index in tonalHits)
+	for(index = 0; index < 12; index++)
 	{
-		if(tonalHits[index] != 0) //we have our first hit!
+		console.log("checking tonals for: " + tonals[index]);
+		for(walkThruIndex = 0; walkThruIndex < 5; walkThruIndex++)
 		{
-			for(var walkThru in majorKeyWalkthroughPattern)
+			var steps = majorKeyWalkthroughPattern[walkThruIndex];
+			if(index + steps > 11)
 			{
-				var steps = majorKeyWalkthroughPattern[walkThru];
-				if(index + steps > 11)
+				console.log(tonals[index+steps-12]);
+				if(tonalHits[index+steps-12] > 0)
 				{
-					if(tonalHits[index+steps-12] > 0)
-					{
-						possibleKeys[index] = 0;
-						break;
-					}
+					possibleKeys[index] = 0;
+					break;
 				}
-				else
+			}
+			else
+			{
+				console.log(tonals[index+steps]);
+				if(tonalHits[index+steps] > 0)
 				{
-					if(tonalHits[index+steps] > 0)
-					{
-						possibleKeys[index] = 0;
-						break;
-					}
+					possibleKeys[index] = 0;
+					break;
 				}
-			}			
+			}
+			
 		}
-		else
-		{
-			possibleKeys[index] = 0;
-		}
+
 	}
 };
 
@@ -64,7 +62,6 @@ var noteClicked = function(){
 	{
 		if(classes.includes(tonals[indexTone]))
 		{
-			console.log(tonals[indexTone]);
 			if(classes.includes("selected-note"))
 			{
 				tonalHits[indexTone]++;
@@ -73,7 +70,6 @@ var noteClicked = function(){
 			{
 				tonalHits[indexTone]--;
 			}
-			console.log(tonalHits[indexTone]);
 		}
 		
 	}
