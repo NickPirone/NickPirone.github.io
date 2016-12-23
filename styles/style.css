@@ -3,11 +3,15 @@
 	width: 100%;
 }
 
+#key-container-box-wrapper{
+	min-height: 100px;
+}
+
 #key-container-box{
 	width: 100%;
+	background-color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: white;
 }
 
 .key-table-item {
