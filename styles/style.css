@@ -1,3 +1,15 @@
+.affix {
+	top: 0;
+	width: 100%;
+}
+
+#key-container-box{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: white;
+}
+
 .key-table-item {
 	width: 100%;
 	font-weight: bold;

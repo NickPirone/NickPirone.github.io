@@ -7,7 +7,13 @@ var possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 var main = function(){
 	buildGuitarLayout();
 	$('.note').click(noteClicked);
+	//$(window).scroll(adjustSticky);
 }
+
+var adjustSticky = function(){
+	var divTop = $('#key-container-box').offset().top;
+	$('#key-container-box').toggleClass('sticky', $(window).scrollTop() > divTop);
+};
 
 var updateTable = function(){
 	$('.key-table-item').each(function(keyIndex){
