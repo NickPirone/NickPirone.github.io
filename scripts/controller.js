@@ -7,8 +7,7 @@ var possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 var main = function(){
 	buildGuitarLayout();
 	$('.note').click(noteClicked);
-	var boxPosition = $('#key-container-box').offset().top;
-	console.log(boxPosition);	
+	var boxPosition = $('#key-container-box').offset().top;	
 	$('#key-container-box').attr('data-offset-top',boxPosition);
 }
 
@@ -95,10 +94,16 @@ var incrementBuildingMap = function(){
 };
 
 var buildGuitarLayout = function(){
-	var fretLength = 100;
+	var windowWidth = $(window).innerWidth();
+	var windowHeight = $(window).innerHeight();
+	var fretWidth = windowWidth * .1;
+	$('.guitar-display').width(fretWidth * 6);
+	console.log(fretWidth);
+	var fretLength = fretWidth * 2.2;
 	for(i = 0; i < 24; i++)
 	{
 		var rowOfFrets = $('<div class="fret">');
+		rowOfFrets.width(fretWidth * 6);
 		rowOfFrets.height(fretLength);
 		rowOfFrets.appendTo($('.guitar-display'));
 		for(j = 0; j < 6; j++)
@@ -110,7 +115,7 @@ var buildGuitarLayout = function(){
 				note.addClass('first-line-note');
 			}
 			note.addClass(tone);
-			note.width(40);	
+			note.width(fretWidth);	
 			note.height(fretLength);
 			note.appendTo(rowOfFrets);
 		}
