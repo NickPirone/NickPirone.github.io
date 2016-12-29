@@ -5,6 +5,8 @@
 
 #key-container-box-wrapper{
 	min-height: 100px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #key-container-box{
