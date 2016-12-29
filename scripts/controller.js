@@ -7,13 +7,10 @@ var possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 var main = function(){
 	buildGuitarLayout();
 	$('.note').click(noteClicked);
-	//$(window).scroll(adjustSticky);
+	var boxPosition = $('#key-container-box').offset().top;
+	console.log(boxPosition);	
+	$('#key-container-box').attr('data-offset-top',boxPosition);
 }
-
-var adjustSticky = function(){
-	var divTop = $('#key-container-box').offset().top;
-	$('#key-container-box').toggleClass('sticky', $(window).scrollTop() > divTop);
-};
 
 var updateTable = function(){
 	$('.key-table-item').each(function(keyIndex){
@@ -29,17 +26,17 @@ var updateTable = function(){
 };
 
 var removeKeysFromPossibilities = function(){
-	console.log(tonalHits);
+	//console.log(tonalHits);
 	possibleKeys = [1,1,1,1,1,1,1,1,1,1,1];
 	for(index = 0; index < 12; index++)
 	{
-		console.log("checking tonals for: " + tonals[index]);
+		//console.log("checking tonals for: " + tonals[index]);
 		for(walkThruIndex = 0; walkThruIndex < 5; walkThruIndex++)
 		{
 			var steps = majorKeyWalkthroughPattern[walkThruIndex];
 			if(index + steps > 11)
 			{
-				console.log(tonals[index+steps-12]);
+				//console.log(tonals[index+steps-12]);
 				if(tonalHits[index+steps-12] > 0)
 				{
 					possibleKeys[index] = 0;
@@ -48,7 +45,7 @@ var removeKeysFromPossibilities = function(){
 			}
 			else
 			{
-				console.log(tonals[index+steps]);
+				//console.log(tonals[index+steps]);
 				if(tonalHits[index+steps] > 0)
 				{
 					possibleKeys[index] = 0;
