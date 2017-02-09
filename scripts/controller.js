@@ -96,7 +96,7 @@ var incrementBuildingMap = function(){
 var buildGuitarLayout = function(){
 	var windowWidth = $(window).innerWidth();
 	var windowHeight = $(window).innerHeight();
-	var fretWidth = windowWidth * .1;
+	var fretWidth = windowHeight * .1;
 	$('.guitar-display').width(fretWidth * 6);
 	console.log(fretWidth);
 	var fretLength = fretWidth * 2.2;
