@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="website_builder.js"></script>
 <head>
-	<title>Nick Pirone's Github Site</title>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Nick Pirone's Github Site</title>
 </head>
 <body>
-	<h1>Welcome to Nick Pirone's Github landing page</h1>
-	<h4>Please check out these projects I am working on:</h6>
-	<div id="project-container">
-		<div class="project" id="cplusplustimes">
-			<a href="https://github.com/NickPirone/cpp_stl_tests">C++ STL Container Test Project</a>
-		</div>
-		<div class="project" id="guitar website">
-			<a href="Guitar_Website/index.html">Guitar Key Finder Web App</a>
-		</div>
-		<div class="project" id="node dfs example">
-			<a href="https://github.com/NickPirone/dfs_node">Simulated DFS (Distributed File System) in Node.js</a>
-		</div>
-	</div>
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Nick Pirone's Github Site</h1>
+      <p>Please check out these projects I am working on, or click the button below to see more about me.</p>
+      <p><a class="btn btn-primary btn-lg" href="assets/about_me.html" role="button">About Me &raquo;</a></p>
+    </div>
+  </div>
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h2>CPP STL Tests</h2>
+        <p>This is a project that I was working on to test performance of insertions, deletions, accesses, etc. for all of the Standard Template Library containers.  The framework was designed to be Policy-Based, so that I could easily swap out template types to test a different container.</p>
+        <p><a class="btn btn-default" href="https://github.com/NickPirone/cpp_stl_tests" role="button">Github Page &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Guitar Website</h2>
+        <p>Years ago, I built this guitar-key finding website when I was first learning to improvise as a guitarist.  The actual guitar fretboard layout is generated with a client-side javascript script. </p>
+        <p><a class="btn btn-default" href="Guitar_Website/index.html" role="button">Github Page &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Node DFS</h2>
+        <p>I was challenged to learn Node.js in a weekend in preparation for an interview--I figured a good way to test whether I knew what I was doing or not was to challenge myself with a project like this:  a simulated Distributed File System in Node.</p>
+        <p><a class="btn btn-default" href="https://github.com/NickPirone/dfs_node" role="button">Github Page &raquo;</a></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>&copy; 2016 Nick Pirone</p>
+    </footer>
+  </div>
+
 </body>
 </html>
